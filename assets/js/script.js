@@ -51,9 +51,9 @@ $(document).ready(function() {
   // Function to update classes every 15 minutes
   function timeblockRefresh() {
     // !!! Call the function initially to update the classes on page load so it doesn't take 15 minutes to update the classes !!!
-    updateTimeblocks(); 
+    updateTimeBlocks(); 
     // Update classes every 15 minutes with setInterval. Resource: https://www.w3schools.com/jsref/met_win_setinterval.asp
-    setInterval(timeblockDesignations, 15 * 60 * 1000);
+    setInterval(updateTimeBlocks, 15 * 60 * 1000);
   }
 
   // Call the function to update the classes for the time-blocks
