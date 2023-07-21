@@ -1,7 +1,11 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-$(function () {
+
+// "$(document).ready(function() {...} code is the preferred way to write jQuery document ready event handlers." So sayeth Google.
+$(document).ready(function() {
+
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -19,5 +23,17 @@ $(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
-  // TODO: Add code to display the current date in the header of the page.
 });
+
+// Function to update the date display
+function updateDate() {
+  const currentDate = new Date();
+  // Format the date to be displayed on the page. See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  const formattedDate = currentDate.toLocaleDateString(undefined, options);
+  // Set the text content of the element with id="currentDay" to the formatted date
+  document.getElementById('currentDate').textContent = formattedDate;
+}
+
+// Call the function to update the date on page load
+updateDate();
