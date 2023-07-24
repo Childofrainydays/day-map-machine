@@ -13,23 +13,17 @@ $(document).ready(function() {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   
-  
-  
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
 
     // Function to update classes for the time blocks
     function updateTimeBlocks() {
-      // Get the current hour in 24-hour format
+      // Get the current hour in 24-hour format using dayjs.
       const currentHour = dayjs().hour();
   
       // Iterate through each time block
+      // $("time-block") is the selector for the class "time-block". Resource: https://www.w3schools.com/jquery/jquery_ref_selectors.asp
       $(".time-block").each(function() {
         // Get the hour for the time block using the id attribute. Resource: https://www.w3schools.com/jquery/html_attr.asp
-        // parseInt() function parses a string and returns an integer. 
+        // parseInt() function parses a string and returns an integer. Used to get the hour from the id.
         const blockHour = parseInt($(this).attr("id").split("-")[1]);
   
         // Clear all class designations first to avoid errors. Resource: https://www.w3schools.com/jquery/html_removeclass.asp
