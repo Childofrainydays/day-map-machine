@@ -14,7 +14,7 @@ $(document).ready(function() {
   
     // Save the user input in local storage using the time-block id as the key.
     // .setItem() method sets the value of the specified local storage item. Resource: https://www.w3schools.com/jsref/met_storage_setitem.asp
-    localStorage.setItem(timeBlockId, description);
+    localStorage.setItem(timeBlockId, noteInput); 
   });
 
     // Function to update classes for the time blocks
@@ -56,11 +56,7 @@ $(document).ready(function() {
 
   // Call the function to update the classes for the time-blocks
   timeblockRefresh();
-  
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  
+
   // Function to update the date display
   function updateDate() {
   const currentDate = new Date();
