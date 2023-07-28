@@ -1,3 +1,4 @@
+
 // "$(document).ready(function() {...} code is the preferred way to write jQuery document ready event handlers." So sayeth Google.
 $(document).ready(function() {
 
@@ -60,13 +61,13 @@ $(document).ready(function() {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   
-// Function to update the date display
-function updateDate() {
+  // Function to update the date display
+  function updateDate() {
   const currentDate = new Date();
   // Format the date to be displayed on the page. Resource: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   const formattedDate = currentDate.toLocaleDateString(undefined, options);
-  // Set the text content of the element with id="currentDate" to the formatted date
+  // Set the text content of the element with id="currentDay" to the formatted date
   document.getElementById('currentDate').textContent = formattedDate;
 }
 
